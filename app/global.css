@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Colors --- */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent: #e1ff00;
+  --color-muted: #71717a;
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-glow: rgba(225, 255, 0, 0.4);
+
+  /* --- Typography --- */
+  --font-serif: "Georgia", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* --- Abstractions (Shadows & Blurs) --- */
+  --shadow-neon: 0 0 20px -5px rgba(225, 255, 0, 0.3);
+  --shadow-neon-strong: 0 0 35px -2px rgba(225, 255, 0, 0.4);
+  --blur-glass: 12px;
+}
+a, button {
+  -webkit-tap-highlight-color: transparent; /* Removes the mobile 'gray box' blink */
+  outline: none !important;
+  text-decoration: none !important;
+}
+/* --- Reusable Utility Classes --- */
+/* global.css */
+@utility section-title {
+  font-size: 2.25rem; /* text-4xl */
+  @media (min-width: 768px) {
+    font-size: 3.75rem; /* text-6xl */
+  }
+
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  margin-bottom: 2rem;
+  
+  /* FIXED: Allow wrapping for longer titles on mobile */
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 0rem;
+
+  /* MOBILE SAFETY: Prevent edge-to-edge stretching */
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  & span {
+    color: var(--color-muted);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    /* Ensure the span doesn't force a line break mid-word */
+    display: inline-block;
+  }
+}
+
+@utility sub-description {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  max-width: 42rem;
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+@utility tech-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--color-accent);
+  opacity: 0.6;
+}
+
+/* The "Pill" Container Style */
+/* global.css */
+@utility glass-capsule {
+  /* We increase the opacity from 0.02 to 0.1 to block background artifacts */
+  background-color: rgba(13, 13, 13, 0.8); 
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 9999px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  &:hover {
+    border-color: var(--color-border-glow);
+    box-shadow: var(--shadow-neon);
+    /* We change the hover tint to a neutral dark to avoid the green gradient */
+    background-color: rgba(20, 20, 20, 0.95);
+  }
+}
+@utility card-title {
+  @apply font-sans font-semibold text-white tracking-tight;
+  font-size: 1.25rem; /* text-xl */
+  @media (min-width: 768px) {
+    font-size: 1.5rem; /* text-2xl */
+  }
+}
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
