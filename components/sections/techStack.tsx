@@ -4,29 +4,30 @@ import { motion } from "framer-motion";
 import { 
   SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, 
   SiTailwindcss, SiPostgresql, SiMongodb, SiAmazonwebservices,
-  SiPython, SiCplusplus, SiC, SiGithub, SiSocketdotio, 
+  SiPython, SiCplusplus, SiC, SiGit , SiSocketdotio, 
   SiVercel, SiJavascript, SiGooglegemini, SiClaude 
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 
 const skills = [
-  { name: "Gemini", type: "AI Model", Icon: SiGooglegemini, dir: { x: 0, y: -80 } },
-  { name: "Claude", type: "AI Model", Icon: SiClaude, dir: { x: 0, y: 80 } },
-  { name: "JavaScript", type: "Language", Icon: SiJavascript, dir: { x: -80, y: 0 } },
-  { name: "TypeScript", type: "Language", Icon: SiTypescript, dir: { x: 80, y: 0 } },
+  // --- Tier 1: Core Web Ecosystem (High Priority) ---
   { name: "ReactJS", type: "Library", Icon: SiReact, dir: { x: -80, y: 0 } },
   { name: "Next.js", type: "Framework", Icon: SiNextdotjs, dir: { x: 80, y: 0 } },
+  { name: "TypeScript", type: "Language", Icon: SiTypescript, dir: { x: 80, y: 0 } },
+  { name: "JavaScript", type: "Language", Icon: SiJavascript, dir: { x: -80, y: 0 } },
   { name: "Node.js", type: "Runtime", Icon: SiNodedotjs, dir: { x: 0, y: 80 } },
+
+  // --- Tier 2: Backend, Cloud & System Languages ---
   { name: "Python", type: "Language", Icon: SiPython, dir: { x: 0, y: -80 } },
   { name: "C++", type: "Language", Icon: SiCplusplus, dir: { x: -80, y: 0 } },
   { name: "C", type: "Language", Icon: SiC, dir: { x: 80, y: 0 } },
+  { name: "AWS", type: "Cloud", Icon: SiAmazonwebservices, dir: { x: 0, y: -80 } },
+  { name: "MongoDB", type: "Database", Icon: SiMongodb, dir: { x: 0, y: 80 } },
+
+  // --- Tier 3: Architecture & Deployment ---
+  { name: "PostgreSQL", type: "Database", Icon: SiPostgresql, dir: { x: 80, y: 0 } },
   { name: "Tailwind", type: "Styling", Icon: SiTailwindcss, dir: { x: 0, y: -80 } },
   { name: "WebSockets", type: "Real-time", Icon: SiSocketdotio, dir: { x: -80, y: 0 } },
-  { name: "PostgreSQL", type: "Database", Icon: SiPostgresql, dir: { x: 80, y: 0 } },
-  { name: "MongoDB", type: "Database", Icon: SiMongodb, dir: { x: 0, y: 80 } },
-  { name: "AWS", type: "Cloud", Icon: SiAmazonwebservices, dir: { x: 0, y: -80 } },
-  { name: "Git", type: "VCS", Icon: SiGithub, dir: { x: -80, y: 0 } },
-  { name: "VS Code", type: "Editor", Icon: VscCode, dir: { x: 80, y: 0 } },
   { name: "CI/CD", type: "Deployment", Icon: SiVercel, dir: { x: 0, y: 80 } },
 ];
 
