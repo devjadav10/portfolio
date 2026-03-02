@@ -121,8 +121,22 @@ a, button {
 }
 
 body {
+  /* Ensure a smooth fade when toggling */
+  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+}
+
+/* Reset any direct grayscale filter on body in monochrome mode so layout isn't affected */
+body.monochrome {
+  filter: none !important;
+}
+
+/* When monochrome mode is active, apply grayscale to content elements
+   instead of the body itself to avoid breaking fixed positioning. */
+body.monochrome * {
+  filter: grayscale(100%) !important;
+  transition: filter 0.6s ease;
 }
