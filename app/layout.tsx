@@ -1,6 +1,7 @@
 import "./global.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { FloatingNav } from "@/components/ui/floating-nav";
+import { MonochromeHook } from "@/hooks/MonochromeHook";
 import { Metadata } from "next";
 // Updated Metadata to reflect your professional engineering identity
 // app/layout.tsx
@@ -63,8 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-black scroll-smooth">
       <body className="antialiased selection:bg-accent selection:text-black">
+        <MonochromeHook />
         {/* FloatingNav is moved outside of SmoothScroll to prevent jitter */}
-        <FloatingNav /> 
+        <FloatingNav />
         <SmoothScroll>
           <main>{children}</main>
         </SmoothScroll>

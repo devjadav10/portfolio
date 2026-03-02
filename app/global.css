@@ -126,3 +126,15 @@ body {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
+
+/* Monochrome overlay: full-screen B&W layer that does not affect layout or interactivity */
+body.monochrome-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Tiny alpha so backdrop-filter reliably kicks in */
+  background-color: rgba(0, 0, 0, 0.001);
+  backdrop-filter: grayscale(100%);
+}
