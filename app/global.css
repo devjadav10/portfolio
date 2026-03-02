@@ -5,7 +5,10 @@
   --color-background: #000000;
   --color-foreground: #ffffff;
   --color-accent: #e1ff00;
-  --color-muted: #71717a;
+  
+  /* UPDATED: Changed from hex #71717a to 60% white for better readability */
+  --color-muted: rgba(255, 255, 255, 0.6);
+  
   --color-border-subtle: rgba(255, 255, 255, 0.05);
   --color-border-glow: rgba(225, 255, 0, 0.4);
 
@@ -19,17 +22,18 @@
   --shadow-neon-strong: 0 0 35px -2px rgba(225, 255, 0, 0.4);
   --blur-glass: 12px;
 }
+
 a, button {
-  -webkit-tap-highlight-color: transparent; /* Removes the mobile 'gray box' blink */
+  -webkit-tap-highlight-color: transparent;
   outline: none !important;
   text-decoration: none !important;
 }
+
 /* --- Reusable Utility Classes --- */
-/* global.css */
 @utility section-title {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem;
   @media (min-width: 768px) {
-    font-size: 3.75rem; /* text-6xl */
+    font-size: 3.75rem;
   }
 
   line-height: 1.1;
@@ -39,7 +43,6 @@ a, button {
   font-family: var(--font-sans);
   margin-bottom: 2rem;
   
-  /* FIXED: Allow wrapping for longer titles on mobile */
   display: flex;
   flex-wrap: wrap; 
   align-items: center;
@@ -47,48 +50,55 @@ a, button {
   column-gap: 0.5rem;
   row-gap: 0rem;
 
-  /* MOBILE SAFETY: Prevent edge-to-edge stretching */
   max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 
   & span {
+    /* Inherits the new 60% opacity muted color */
     color: var(--color-muted);
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 500;
-    /* Ensure the span doesn't force a line break mid-word */
     display: inline-block;
   }
 }
 
 @utility sub-description {
   font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: 16px; 
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   color: var(--color-muted);
   max-width: 42rem;
+  
   @media (min-width: 768px) {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
+/* ... other theme variables ... */
+
 @utility tech-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  /* UPDATED: Increased from 10px to 12px for better legibility */
+  font-size: 11px; 
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+  
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  /* Slightly tightened tracking so the larger text doesn't overflow */
+  letter-spacing: 0.35em; 
   color: var(--color-accent);
-  opacity: 0.6;
+  opacity: 0.85;
+  text-shadow: 0 0 8px rgba(225, 255, 0, 0.2);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* The "Pill" Container Style */
-/* global.css */
 @utility glass-capsule {
-  /* We increase the opacity from 0.02 to 0.1 to block background artifacts */
   background-color: rgba(13, 13, 13, 0.8); 
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-border-subtle);
@@ -98,17 +108,18 @@ a, button {
   &:hover {
     border-color: var(--color-border-glow);
     box-shadow: var(--shadow-neon);
-    /* We change the hover tint to a neutral dark to avoid the green gradient */
     background-color: rgba(20, 20, 20, 0.95);
   }
 }
+
 @utility card-title {
   @apply font-sans font-semibold text-white tracking-tight;
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   @media (min-width: 768px) {
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1.5rem;
   }
 }
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);

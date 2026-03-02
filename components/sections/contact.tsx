@@ -40,7 +40,8 @@ const Contact = () => {
                 <Mail size={18} />
               </div>
               <div className="min-w-0">
-                <p className="tech-label !opacity-40 text-[9px] uppercase tracking-widest mb-0.5">Drop a mail</p>
+                {/* FIXED: Removed text-[9px] to inherit the 11px/12px global size */}
+                <p className="tech-label !opacity-85 uppercase mb-0.5 group-hover:!opacity-100 transition-opacity">Drop a mail</p>
                 <p className="text-base md:text-lg font-sans font-medium text-foreground truncate break-all md:break-normal">
                   {EMAIL}
                 </p>
@@ -58,7 +59,8 @@ const Contact = () => {
                 <Phone size={18} />
               </div>
               <div className="min-w-0">
-                <p className="tech-label !opacity-40 text-[9px] uppercase tracking-widest mb-0.5">Say Hello</p>
+                {/* FIXED: Removed text-[9px] */}
+                <p className="tech-label !opacity-85 uppercase mb-0.5 group-hover:!opacity-100 transition-opacity">Say Hello</p>
                 <p className="text-base md:text-lg font-sans font-medium text-foreground">
                   {MOBILE}
                 </p>
@@ -81,7 +83,8 @@ const Contact = () => {
                 <FileText size={20} />
               </div>
               <div>
-                <p className="tech-label !opacity-100 text-accent text-[10px] uppercase tracking-widest mb-0.5">Open for roles</p>
+                {/* FIXED: Removed text-[10px] */}
+                <p className="tech-label !opacity-100 text-accent uppercase mb-0.5">Open for roles</p>
                 <p className="text-base md:text-lg font-sans font-bold text-foreground uppercase tracking-tighter italic font-serif leading-none">Download Resume</p>
               </div>
             </div>
@@ -101,7 +104,8 @@ const Contact = () => {
                   <span className="text-muted group-hover:text-accent transition-colors flex-shrink-0">
                     <social.Icon size={20} />
                   </span>
-                  <span className="tech-label text-[10px] opacity-40 group-hover:opacity-100 uppercase tracking-widest truncate">
+                  {/* FIXED: Removed text-[10px] */}
+                  <span className="tech-label !opacity-85 group-hover:!opacity-100 uppercase truncate transition-opacity">
                     {social.label}
                   </span>
                 </div>

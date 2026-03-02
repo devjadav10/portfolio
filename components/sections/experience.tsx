@@ -6,6 +6,7 @@ import { experiences } from "@/data/experience";
 const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Hardcoded start date for the timeline arc calculation
   const START_DATE = useMemo(() => new Date(2023, 5, 1), []); 
   const CURRENT_DATE = useMemo(() => new Date(), []);
   
@@ -45,7 +46,8 @@ const Experience = () => {
   const smoothOffset = useSpring(pathOffset, { stiffness: 80, damping: 20 });
 
   return (
-    <>
+    <section className="relative w-full">
+      {/* Header Section */}
       <div className="flex flex-col items-center text-center pt-24 px-6 max-w-5xl mx-auto w-full overflow-hidden">
         <h2 className="section-title">
           Professional <span>Experience</span>
@@ -59,39 +61,40 @@ const Experience = () => {
       </div>
 
       <div ref={containerRef} className="relative h-[320vh] max-w-7xl mx-auto w-full">
-        {/* Adjusted pb-24 to ensure bottom elements sit above the FloatingNav */}
         <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-between pt-4 pb-24 overflow-hidden px-6">
           
-          {/* Technical Arc */}
+          {/* TECHNICAL ARC: Updated with 60% muted base and vibrant accent highlight */}
           <div className="w-full max-w-2xl -mt-4 flex flex-col items-center flex-shrink-0">
-            <svg viewBox="0 0 400 120" className="w-full h-auto overflow-visible opacity-30">
+            <svg viewBox="0 0 400 120" className="w-full h-auto overflow-visible">
               <path 
                 d="M 40,100 Q 200,10 360,100" 
                 fill="none" 
                 stroke="var(--color-muted)" 
-                strokeWidth="1" 
-                strokeDasharray="4 4" 
+                strokeWidth="1.5" 
+                strokeDasharray="6 6" 
+                className="opacity-30" 
               />
               <motion.path
                 d="M 40,100 Q 200,10 360,100"
                 fill="none"
                 stroke="var(--color-accent)"
-                strokeWidth="2.5"
+                strokeWidth="2"
                 strokeLinecap="round"
-                style={{ pathLength: smoothLength, pathOffset: smoothOffset }}
+                style={{ 
+                  pathLength: smoothLength, 
+                  pathOffset: smoothOffset,
+                  filter: "drop-shadow(0 0 8px rgba(225, 255, 0, 0.4))" 
+                }}
               />
             </svg>
-            <div className="w-full flex justify-between px-8 mt-2 tech-label">
+            <div className="w-full flex justify-between px-8 mt-2 tech-label !opacity-85">
               <span>2023</span>
               <span>Present</span>
             </div>
           </div>
 
-          {/* MIDDLE SECTION ADJUSTMENT:
-              Using h-[35vh] and max-h-[300px] to keep text from expanding into 
-              the navbar zone at the bottom 
-          */}
-          <div className="relative w-full max-w-5xl h-[35vh] flex items-center justify-center flex-shrink-0">
+          {/* MAIN CONTENT AREA: Centered and responsive */}
+          <div className="relative w-full max-w-5xl h-[35vh] flex items-center justify-center flex-shrink-0 overflow-visible">
             {experiences.map((exp, index) => (
               <ExperienceItem 
                 key={index} 
@@ -103,18 +106,21 @@ const Experience = () => {
             ))}
           </div>
 
-          {/* Timeline Explorer: Now sits at a comfortable bottom margin */}
+          {/* TIMELINE EXPLORER: Integrated with system tech-label style */}
           <div className="flex flex-col items-center gap-3 z-10 flex-shrink-0">
-            <span className="tech-label opacity-40">Timeline Explorer</span>
+            <span className="tech-label !opacity-85">Timeline Explorer</span>
             <motion.div 
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-px h-10 bg-gradient-to-b from-accent to-transparent opacity-50"
+              animate={{ 
+                y: [0, 12, 0],
+                opacity: [0.4, 1, 0.4] 
+              }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-px h-12 bg-gradient-to-b from-accent via-accent/50 to-transparent"
             />
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
@@ -122,13 +128,17 @@ const ExperienceItem = ({ exp, index, total, progress }: any) => {
   const start = index / total;
   const end = (index + 1) / total;
   
+  // Smooth opacity and vertical entry for cinematic transitions
   const opacity = useTransform(progress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
-  const roleY = useTransform(progress, [start, start + 0.2], [20, 0]);
+  const roleY = useTransform(progress, [start, start + 0.2], [10, 0]); 
 
   return (
-    <motion.div style={{ opacity }} className="absolute flex flex-col items-center justify-center">
-      <div className="relative text-center">
-        <span className="tech-label text-accent block mb-3">
+    <motion.div 
+      style={{ opacity }} 
+      className="absolute inset-0 flex flex-col items-center justify-center w-full h-full"
+    >
+      <div className="relative text-center w-full">
+        <span className="tech-label text-accent block mb-2 !opacity-85">
           {exp.duration}
         </span>
         <motion.h3 
@@ -139,17 +149,17 @@ const ExperienceItem = ({ exp, index, total, progress }: any) => {
         </motion.h3>
         <motion.p
           style={{ y: roleY }}
-          className="sub-description text-muted text-base md:text-xl font-serif font-light italic tracking-tight"
+          className="sub-description text-muted text-base md:text-xl font-serif font-light italic tracking-tight mx-auto"
         >
           {exp.contribution}
         </motion.p>
         
         <div className="flex items-center justify-center gap-4 mt-5">
-          <div className="w-6 h-px bg-border-subtle" />
+          <div className="w-6 h-px bg-border-subtle opacity-30" />
           <p className="text-muted text-base md:text-xl font-serif font-light italic tracking-tight">
             at <span className="text-foreground">{exp.company}</span>
           </p>
-          <div className="w-6 h-px bg-border-subtle" />
+          <div className="w-6 h-px bg-border-subtle opacity-30" />
         </div>
       </div>
     </motion.div>

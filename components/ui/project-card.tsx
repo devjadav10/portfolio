@@ -46,17 +46,18 @@ const ProjectCardBase = ({
             <div className="space-y-2 md:space-y-3 flex-1 min-w-0">
               <div>
                 <h3 className="card-title text-xl md:text-3xl mb-1 truncate">{title}</h3>
-                <p className="text-muted font-serif italic text-xs md:text-base opacity-60 line-clamp-1">
+                {/* Fixed: subtitle now uses the 60% muted variable for high-contrast readability */}
+                <p className="sub-description !text-xs md:!text-base line-clamp-1 opacity-100">
                   {subtitle}
                 </p>
               </div>
               
-              {/* Responsive Tool Display */}
+              {/* UPDATED: Tech Labels for Tools */}
               <div className="flex flex-wrap gap-2">
                 {tools.slice(0, 5).map((tool, index) => (
                   <span 
                     key={tool} 
-                    className={`tech-label !opacity-40 text-[8px] md:text-[9px] border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap
+                    className={`tech-label border border-accent/20 px-2 py-0.5 rounded-full whitespace-nowrap transition-all duration-300 group-hover:border-accent/40
                       ${index >= 3 ? 'hidden md:inline-block' : 'inline-block'} 
                     `}
                   >
