@@ -1,9 +1,9 @@
 import "./global.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { FloatingNav } from "@/components/ui/floating-nav";
-import { MonochromeHook } from "@/hooks/MonochromeHook";
 import { Metadata } from "next";
-
+// Updated Metadata to reflect your professional engineering identity
+// app/layout.tsx
 export const metadata: Metadata = {
   title: {
     default: "Dev Jadav | Software Engineer",
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   },
   description: "Software Engineer specializing in high-performance web systems, scalable architectures, and seamless user experiences.",
   
+  // UPDATED: High-intent Engineering Keywords
   keywords: [
     "Software Engineer", 
     "Full Stack Developer", 
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
+    // UPDATED: Using /favicon.png as requested
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png", 
@@ -61,8 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-black scroll-smooth">
       <body className="antialiased selection:bg-accent selection:text-black">
-        <MonochromeHook />
-        
+        {/* FloatingNav is moved outside of SmoothScroll to prevent jitter */}
         <FloatingNav /> 
         <SmoothScroll>
           <main>{children}</main>
