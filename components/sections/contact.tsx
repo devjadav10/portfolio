@@ -73,7 +73,7 @@ const Contact = () => {
         {/* Right: Resume & Socials */}
         <div className="flex flex-col gap-4">
           <a 
-            href="/resume.pdf" 
+            href="/Dev_Jadav_Resume.pdf" 
             target="_blank"
             rel="noopener noreferrer"
             className="glass-capsule group flex items-center justify-between p-5 md:p-6 !rounded-[24px] bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-500 shadow-neon h-full"
