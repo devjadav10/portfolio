@@ -8,14 +8,14 @@ export const experiences = [
   },
   {
     role: "Software Engineer Intern",
-    company: "KFin Technologies",
+    company: "KFin Technologies Limited",
     duration: "January 2024 — June 2024",
     // 6 Words: Focus on Bug Reduction
     contribution: "Reduced SIT/UAT bug turnaround time by 55%."
   },
   {
     role: "Software Engineer",
-    company: "KFin Technologies",
+    company: "KFin Technologies Limited",
     duration: "July 2024 — Present",
     // 6 Words: Focus on Load Time & HNI
     contribution: "Optimized financial platforms; 83% load reduction."
