@@ -46,7 +46,7 @@ const Experience = () => {
   const smoothOffset = useSpring(pathOffset, { stiffness: 80, damping: 20 });
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full overflow-x-clip">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center pt-24 px-6 max-w-5xl mx-auto w-full overflow-hidden">
         <h2 className="section-title">
@@ -64,8 +64,8 @@ const Experience = () => {
         <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-between pt-4 pb-24 overflow-hidden px-6">
           
           {/* TECHNICAL ARC: Updated with 60% muted base and vibrant accent highlight */}
-          <div className="w-full max-w-2xl -mt-4 flex flex-col items-center flex-shrink-0">
-            <svg viewBox="0 0 400 120" className="w-full h-auto overflow-visible">
+          <div className="w-full max-w-2xl -mt-4 flex flex-col items-center flex-shrink-0 overflow-hidden px-1">
+            <svg viewBox="0 0 400 120" className="w-full h-auto overflow-hidden">
               <path 
                 d="M 40,100 Q 200,10 360,100" 
                 fill="none" 
@@ -94,7 +94,7 @@ const Experience = () => {
           </div>
 
           {/* MAIN CONTENT AREA: Centered and responsive */}
-          <div className="relative w-full max-w-5xl h-[35vh] flex items-center justify-center flex-shrink-0 overflow-visible">
+          <div className="relative w-full max-w-5xl h-[35vh] flex items-center justify-center flex-shrink-0 overflow-x-clip px-3">
             {experiences.map((exp, index) => (
               <ExperienceItem 
                 key={index} 

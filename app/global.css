@@ -120,11 +120,19 @@ a, button {
   }
 }
 
+/* Prevent horizontal scroll from off-screen animations, shadows, or vw quirks */
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Monochrome overlay: full-screen B&W layer that does not affect layout or interactivity */

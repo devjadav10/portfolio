@@ -12,7 +12,7 @@ const SOCIAL_LINKS = [
 
 const Contact = () => {
   return (
-    <section className="relative bg-background flex flex-col items-center overflow-visible pb-20 px-6">
+    <section className="relative bg-background flex flex-col items-center overflow-x-clip pb-20 px-6">
       
       {/* Header */}
       <div className="mb-16 text-center">

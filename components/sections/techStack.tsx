@@ -34,7 +34,7 @@ const skills = [
 const TechStack = () => {
   return (
     /* Section padding comes from SectionHolder; keep this wrapper layout-only */
-    <section className="bg-background flex flex-col items-center overflow-visible">
+    <section className="bg-background flex flex-col items-center overflow-x-clip">
       
       <div className="text-center mb-16 md:mb-20 w-full max-w-4xl">
         <h2 className="section-title uppercase tracking-tighter">
