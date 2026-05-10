@@ -14,7 +14,7 @@ const ProjectGrid = () => {
   });
 
   return (
-    <section ref={container} className="relative w-full max-w-[100%] bg-background overflow-x-clip">
+    <section ref={container} className="relative w-full bg-background">
       <div className="mb-24 flex flex-col items-center text-center">
         <h2 className="section-title">
           Selected <span>Works</span>
