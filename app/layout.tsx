@@ -2,6 +2,7 @@ import "./global.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { FloatingNav } from "@/components/ui/floating-nav";
 import { MonochromeHook } from "@/hooks/MonochromeHook";
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
 // Updated Metadata to reflect your professional engineering identity
 // app/layout.tsx
@@ -68,8 +69,9 @@ export default function RootLayout({
         {/* FloatingNav is moved outside of SmoothScroll to prevent jitter */}
         <FloatingNav />
         <SmoothScroll>
-          <main>{children}</main>
+          <main className="min-w-0 overflow-x-clip">{children}</main>
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
