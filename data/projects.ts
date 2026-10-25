@@ -6,7 +6,7 @@ export const projects = [
     liveLink: null,
     github: null,
     description: "Owning the foundational data pipelines, syncing CRMs, user calendars, and call-recording bots, that feed the platform's AI knowledge graph.",
-    image: "/images/zime.webp", 
+    image: "/images/Zime.webp", 
     timeline: "July 2026 - Present",
     tools: ["Java", "Node.js", "Next.js", "AWS SQS", "Recall.ai", "Docker"],
     content: "When a founding engineer left, I took over the lifeblood of the application: the integration pod. I manage the pipelines that sync customer CRMs, calendars, and call ingestion bots (Recall, Zoom, MS Teams). If this data is wrong, the platform's AI agents hallucinate. I stabilized the deal-mapping and sync pipelines to hit a 100% same-day sync rate for the last month, and pushed CRM update health from 89.3% to 99.6%. On the infra side, I cut queue messaging costs by 99% by migrating to AWS SQS, and built a technical POC for an alternative recording bot that gave us the leverage to negotiate a 40% discount with our current vendor. Right now, I'm modularizing the architecture so adding new tools becomes plug-and-play."
