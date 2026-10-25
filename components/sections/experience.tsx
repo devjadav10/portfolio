@@ -7,7 +7,7 @@ const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   // Hardcoded start date for the timeline arc calculation
-  const START_DATE = useMemo(() => new Date(2023, 5, 1), []); 
+  const START_DATE = useMemo(() => new Date(2024, 1, 1), []); 
   const CURRENT_DATE = useMemo(() => new Date(), []);
   
   const TOTAL_MONTHS = useMemo(() => {
@@ -54,8 +54,7 @@ const Experience = () => {
         </h2>
         <div className="max-w-2xl mx-auto">
           <p className="sub-description mt-4 px-4">
-            A trajectory of technical excellence, shipping high-performance 
-            financial systems and solving complex algorithmic challenges at scale.
+          Building resilient distributed systems, from mission-critical financial platforms to the foundational data pipelines powering AI agents.
           </p>
         </div>
       </div>

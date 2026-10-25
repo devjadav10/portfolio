@@ -1,11 +1,11 @@
 export const experiences = [
-  {
-    role: "Summer Research Intern",
-    company: "DA-IICT",
-    duration: "May 2023 — July 2023",
-    // 7 Words: Focus on Cost & Accuracy
-    contribution: "Built zero-cost, 1m-accuracy indoor navigation system."
-  },
+  // {
+  //   role: "Summer Research Intern",
+  //   company: "DA-IICT",
+  //   duration: "May 2023 — July 2023",
+  //   // 7 Words: Focus on Cost & Accuracy
+  //   contribution: "Built zero-cost, 1m-accuracy indoor navigation system."
+  // },
   {
     role: "Software Engineer Intern",
     company: "KFin Technologies Limited",
@@ -16,8 +16,15 @@ export const experiences = [
   {
     role: "Software Engineer",
     company: "KFin Technologies Limited",
-    duration: "July 2024 — Present",
+    duration: "July 2024 — July 2026",
     // 6 Words: Focus on Load Time & HNI
     contribution: "Optimized financial platforms; 83% load reduction."
+  },
+  {
+    role: "SDE - Application & Integration",
+    company: "Zime.ai",
+    duration: "July 2026 — Present",
+    // 6 Words: Focus on Load Time & HNI
+    contribution: "Powering AI with Data Pipelines."
   },
 ];

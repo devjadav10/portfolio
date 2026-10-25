@@ -3,7 +3,7 @@ import React, { memo } from "react";
 import HighlightText from "@/components/ui/highlight-text";
 
 const DESCRIPTION =
-  "Building high-performance systems with a focus on seamless user experience. Currently optimizing enterprise platforms for lakhs of HNI investors and millions of transactions.";
+  "Architecting core data infrastructure and distributed systems. Currently building the foundational integration pipelines that power enterprise AI platforms.";
 
 const Hero = () => {
   return (
@@ -40,9 +40,9 @@ const Hero = () => {
         {/* Line 3: Location */}
         <div className="flex flex-wrap items-center justify-center gap-x-2 md:gap-x-4 text-3xl md:text-7xl font-serif tracking-tighter mt-2 md:mt-4">
           <span className="text-muted">Based in</span>
-          <div className="group relative w-[65px] md:w-[125px] h-[35px] md:h-[65px] glass-capsule overflow-hidden flex-shrink-0">
+          {/* <div className="group relative w-[65px] md:w-[125px] h-[35px] md:h-[65px] glass-capsule overflow-hidden flex-shrink-0">
              <img src="/images/location.png" className="w-full h-full object-cover" alt="India" />
-          </div>
+          </div> */}
           <span className="italic text-foreground font-medium">India</span>
         </div>
       </div>

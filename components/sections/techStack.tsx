@@ -3,32 +3,29 @@ import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { 
   SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, 
-  SiTailwindcss, SiPostgresql, SiMongodb, SiAmazonwebservices,
-  SiPython, SiCplusplus, SiC, SiGit , SiSocketdotio, 
-  SiVercel, SiJavascript, SiGooglegemini, SiClaude 
+  SiPostgresql, SiMongodb, SiAmazonwebservices,
+  SiPython, SiSocketdotio, SiDocker, SiRabbitmq
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import { FaJava } from "react-icons/fa";
 
 const skills = [
-  // --- Tier 1: Core Web Ecosystem (High Priority) ---
-  { name: "ReactJS", type: "Library", Icon: SiReact, dir: { x: -80, y: 0 } },
-  { name: "Next.js", type: "Framework", Icon: SiNextdotjs, dir: { x: 80, y: 0 } },
-  { name: "TypeScript", type: "Language", Icon: SiTypescript, dir: { x: 80, y: 0 } },
-  { name: "JavaScript", type: "Language", Icon: SiJavascript, dir: { x: -80, y: 0 } },
-  { name: "Node.js", type: "Runtime", Icon: SiNodedotjs, dir: { x: 0, y: 80 } },
-
-  // --- Tier 2: Backend, Cloud & System Languages ---
+  // --- Tier 1: Core Languages & Runtimes ---
+  { name: "Java", type: "Language", Icon: FaJava, dir: { x: -80, y: 0 } },
+  { name: "Node.js", type: "Runtime", Icon: SiNodedotjs, dir: { x: 80, y: 0 } },
+  { name: "TypeScript", type: "Language", Icon: SiTypescript, dir: { x: 0, y: 80 } },
   { name: "Python", type: "Language", Icon: SiPython, dir: { x: 0, y: -80 } },
-  { name: "C++", type: "Language", Icon: SiCplusplus, dir: { x: -80, y: 0 } },
-  { name: "C", type: "Language", Icon: SiC, dir: { x: 80, y: 0 } },
-  { name: "AWS", type: "Cloud", Icon: SiAmazonwebservices, dir: { x: 0, y: -80 } },
-  { name: "MongoDB", type: "Database", Icon: SiMongodb, dir: { x: 0, y: 80 } },
 
-  // --- Tier 3: Architecture & Deployment ---
-  { name: "PostgreSQL", type: "Database", Icon: SiPostgresql, dir: { x: 80, y: 0 } },
-  { name: "Tailwind", type: "Styling", Icon: SiTailwindcss, dir: { x: 0, y: -80 } },
-  { name: "WebSockets", type: "Real-time", Icon: SiSocketdotio, dir: { x: -80, y: 0 } },
-  { name: "CI/CD", type: "Deployment", Icon: SiVercel, dir: { x: 0, y: 80 } },
+  // --- Tier 2: Cloud, Infrastructure & Messaging ---
+  { name: "AWS", type: "Cloud", Icon: SiAmazonwebservices, dir: { x: -80, y: 0 } },
+  { name: "Docker", type: "Containerization", Icon: SiDocker, dir: { x: 80, y: 0 } },
+  { name: "RabbitMQ", type: "Message Broker", Icon: SiRabbitmq, dir: { x: 0, y: 80 } },
+  { name: "PostgreSQL", type: "Database", Icon: SiPostgresql, dir: { x: 0, y: -80 } },
+
+  // --- Tier 3: Architecture & Frameworks ---
+  { name: "Next.js", type: "Framework", Icon: SiNextdotjs, dir: { x: -80, y: 0 } },
+  { name: "ReactJS", type: "Library", Icon: SiReact, dir: { x: 80, y: 0 } },
+  { name: "WebSockets", type: "Real-time", Icon: SiSocketdotio, dir: { x: 0, y: 80 } },
+  { name: "MongoDB", type: "Database", Icon: SiMongodb, dir: { x: 0, y: -80 } },
 ];
 
 const TechStack = () => {
@@ -42,8 +39,8 @@ const TechStack = () => {
         </h2>
         <div className="mt-4 mx-auto max-w-2xl">
           <p className="sub-description text-center px-4">
-            Leveraging a robust stack to optimize high-volume financial platforms 
-            and build scalable real-time architectures.
+            Engineering robust data pipelines, scalable enterprise infrastructure, 
+            and foundational integrations to power AI-driven platforms.
           </p>
         </div>
       </div>

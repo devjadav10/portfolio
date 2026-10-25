@@ -22,7 +22,7 @@ const ProjectGrid = () => {
         
         <div className="mx-auto px-4 max-w-2xl">
         <p className="sub-description mt-4 mx-auto px-4 max-w-2xl">
-          Engineering robust, scalable web applications with a focus on high-performance architecture and seamless user experiences at scale.
+        Architecting highly reliable data infrastructure to solve complex backend bottlenecks and scale enterprise platforms.
         </p>
         </div>
       </div>
